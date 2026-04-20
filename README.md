@@ -4,31 +4,30 @@ Telegram bot-based tool to download sticker packs by names listed in a file.
 
 ## Setup
 
-### Using Poetry (recommended)
-
-```bash
-poetry install
-```
-
-### Manual setup
+### Using pip
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
 # or
-venv\Scripts\activate    # Windows
+venv\Scripts\activate.bat    # Windows CMD
+# or
+venv\Scripts\activate.ps1   # Windows PowerShell
 
-pip install -r requirements.txt
+pip install "pytelegrambotapi>=4.33.0,<5.0.0" "python-dotenv>=1.2.2,<2.0.0" "requests[socks]>=2.33.1,<3.0.0"
 ```
-
-> **Note**: Create `requirements.txt` from `pyproject.toml` if needed:
-> ```bash
-> poetry export -f requirements.txt --output requirements.txt
-> ```
 
 ## Configuration
 
-Create `.env` file with your bot token:
+Copy `.env-example` to `.env` and fill in your credentials:
+
+```bash
+cp .env-example .env  # Linux/macOS
+# or
+copy .env-example .env   # Windows
+```
+
+Edit `.env` with your bot token and optional proxy:
 
 ```env
 BOT_TOKEN=your_telegram_bot_token_here
@@ -39,13 +38,13 @@ SOCKS5_PROXY_URL=socks5://user:pass@host:port
 ## Usage
 
 1. Create `stickers_list.txt` with sticker pack names, one per line:
-   ```
+```
 tea_stickers
 cool_stickers_pack
 ```
 
 2. Run the script:
-   ```bash
+  ```bash
 python main.py
 ```
 
