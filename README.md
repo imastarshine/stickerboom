@@ -38,13 +38,15 @@ SOCKS5_PROXY_URL=socks5://user:pass@host:port
 ## Usage
 
 1. Create `stickers_list.txt` with sticker pack names, one per line:
+
 ```
 tea_stickers
 cool_stickers_pack
 ```
 
 2. Run the script:
-  ```bash
+
+```bash
 python main.py
 ```
 
